@@ -2,7 +2,7 @@
 
 > Pick two personas, pick a topic, and watch them argue it out across five rounds.
 
-**[Live demo](https://su-debate.vercel.app)**
+**[Live demo](https://debate-mlx.vercel.app)**
 
 Each round makes a separate call to Llama 3.3 with a system prompt that locks the model into one persona's rhetorical style and feeds it the last four exchanges, so arguments actually respond to what the opponent just said rather than restating an opening. Seven built-in personas ship with hand-written style instructions — Elon Musk argues from first principles, Socrates answers questions with questions, Shakespeare reaches for iambic pentameter — and you can type any custom name instead, which falls back to a generic in-character prompt. The final round is flagged so both sides deliver closing arguments.
 
@@ -33,4 +33,4 @@ Requires `GROQ_API_KEY` in `.env.local`, read server-side by the `/api/debate` r
 
 ---
 
-Part of a series of 91 small web apps. [Browse them all](https://su-slopmachine.vercel.app).
+Part of a series of 91 small web apps. [Browse them all](https://lorenzoylosada.vercel.app).
