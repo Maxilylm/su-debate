@@ -1,36 +1,36 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# AI Debate Arena
 
-## Getting Started
+> Pick two personas, pick a topic, and watch them argue it out across five rounds.
 
-First, run the development server:
+**[Live demo](https://su-debate.vercel.app)**
+
+Each round makes a separate call to Llama 3.3 with a system prompt that locks the model into one persona's rhetorical style and feeds it the last four exchanges, so arguments actually respond to what the opponent just said rather than restating an opening. Seven built-in personas ship with hand-written style instructions — Elon Musk argues from first principles, Socrates answers questions with questions, Shakespeare reaches for iambic pentameter — and you can type any custom name instead, which falls back to a generic in-character prompt. The final round is flagged so both sides deliver closing arguments.
+
+## Features
+
+- Seven scripted personas plus free-text custom personas on either side
+- Five rounds, ten alternating arguments, rendered on a split-screen stage
+- Eight quick-pick topics or your own
+- Conversation context carried between turns so each side rebuts the last point
+- Round announcements and a progress bar as the debate advances
+- Audience vote at the end (either side or a tie) and a copyable full transcript
+
+## Stack
+
+- Next.js 16 (App Router) + React 19 + TypeScript
+- Tailwind CSS v4
+- Groq API — `llama-3.3-70b-versatile`, one request per argument, 30s max duration
+- Deployed on Vercel
+
+## Running locally
 
 ```bash
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Requires `GROQ_API_KEY` in `.env.local`, read server-side by the `/api/debate` route.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+---
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Part of a series of 91 small web apps. [Browse them all](https://su-slopmachine.vercel.app).
